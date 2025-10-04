@@ -81,3 +81,15 @@ cotLine.setAttribute('y1', 1);
 cotLine.setAttribute('x2', cotX);
 cotLine.setAttribute('y2', 1);
 }
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('calcBtn').addEventListener('click', updateCircle);
+    document.getElementById('angleInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      updateCircle();
+    }
+  });
+    document.querySelectorAll('input[name="angleUnit"]').forEach(radio => {
+    radio.addEventListener('change', updateCircle);
+  });
+    updateCircle();
+});
