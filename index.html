@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Unit Circle Calculator</title>
+<title>unit circle calculator</title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <main>
-<h1>Unit Circle Calculator</h1>
+<h1>unit circle calculator</h1>
 
-<label for="angleInput">Enter Angle (degrees): </label>
+<label for="angleInput">enter angle (degrees): </label>
 <input type="number" id="angleInput" value="45" min="0" max="360" step="any" />
-<button id="calcBtn" type="button">Calculate</button>
-
+<button id="calcBtn" type="button">calculate</button>
 <svg id="unitCircle" width="300" height="300" viewBox="-1.5 -1.5 3 3" >
   <circle cx="0" cy="0" r="1" class="circle-outline" />
     <line x1="-1.5" y1="0" x2="1.5" y2="0" class="axes" />
@@ -23,45 +22,46 @@
     <line id="cosLine" x1="0" y1="0" x2="0" y2="0" class="cos-line" />
   <line id="sinLine" x1="0" y1="0" x2="0" y2="0" class="sin-line" />
     <text id="angleLabel" x="0.1" y="-0.1" class="angle-label"></text>
+    <line id="tanLine" x1="0" y1="0" x2="0" y2="0" class="tan-line" />
+<line id="cotLine" x1="0" y1="0" x2="0" y2="0" class="cot-line" />
+
 </svg>
+
+<label>
+  <input type="radio" name="angleUnit" value="degrees" checked /> degrees
+</label>
+<label>
+  <input type="radio" name="angleUnit" value="radians" /> radians
+</label>
+
 <div id="results">
-  <p><strong>Angle:</strong> <span id="angleVal">45</span>°</p>
-  <p><strong>Cosine (x):</strong> <span id="cosVal"></span></p>
-  <p><strong>Sine (y):</strong> <span id="sinVal"></span></p>
+  <p>angle: <span id="angleVal">45</span>°</p>
+  <p>cosine (x): <span id="cosVal"></span></p>
+  <p>sine (y): <span id="sinVal"></span></p>
+  <p>tangent (tan): <span id="tanVal"></span></p>
+<p>cotangent (cot): <span id="cotVal"></span></p>
+
 </div>
 </main>
 
 <aside class="info">
   <h2>Special Properties of Sine and Cosine</h2>
   <ul>
-    <li><span class="highlight">Cosine</span> corresponds to the x-coordinate on the unit circle.</li>
-    <li><span class="highlight">Sine</span> corresponds to the y-coordinate on the unit circle.</li>
-    <li>Both sine and cosine values are between <code>-1</code> and <code>1</code>.</li>
-    <li>At 0°, <code>cos(0°) = 1</code> and <code>sin(0°) = 0</code>.</li>
-    <li>At 90°, <code>cos(90°) = 0</code> and <code>sin(90°) = 1</code>.</li>
+    <li><span class="highlight">cosine</span> corresponds to the x-coordinate on the unit circle.</li>
+    <li><span class="highlight">sine</span> corresponds to the y-coordinate on the unit circle.</li>
+    <li>both sine and cosine values are between <code>-1</code> and <code>1</code>.</li>
+    <li>at 0°, <code>cos(0°) = 1</code> and <code>sin(0°) = 0</code>.</li>
+    <li>at 90°, <code>cos(90°) = 0</code> and <code>sin(90°) = 1</code>.</li>
     <li><code>sin(θ) = cos(90° - θ)</code> (co-function identity).</li>
-    <li>Sine is an <strong>odd</strong> function: <code>sin(-θ) = -sin(θ)</code>.</li>
-    <li>Cosine is an <strong>even</strong> function: <code>cos(-θ) = cos(θ)</code>.</li>
+    <li>sine is an odd function: <code>sin(-θ) = -sin(θ)</code>.</li>
+    <li>cosine is an even function: <code>cos(-θ) = cos(θ)</code>.</li>
   </ul>
-</div>
+  </aside>
+
 <footer>
-  <p>Created by Maya Hazarika — Last updated Oct 2025</p>
+  <p>Created by Maya Hazarika — Last updated October 2025</p>
 </footer>
 <script src="script.js"></script>
 </body>
 
 </html>
-
-<div id="angleInputContainer">
-  <label for="angleInput">Enter Angle:</label>
-  <input type="number" id="angleInput" value="45" step="any" />
-  
-  <label>
-    <input type="radio" name="angleUnit" value="degrees" checked /> Degrees
-  </label>
-  <label>
-    <input type="radio" name="angleUnit" value="radians" /> Radians
-  </label>
-  
-  <button id="calcBtn" type="button">Calculate</button>
-</div>
