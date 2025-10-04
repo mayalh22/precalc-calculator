@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unit Circle Calculator</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<h1>Unit Circle Calculator</h1>
+
+<label for="angleInput">Enter Angle (degrees): </label>
+<input type="number" id="angleInput" value="45" min="0" max="360" step="any" />
+<button id="calcBtn">Calculate</button>
+
+<svg id="unitCircle" width="300" height="300" viewBox="-1.5 -1.5 3 3" >
+  <circle cx="0" cy="0" r="1" class="circle-outline" />
+    <line x1="-1.5" y1="0" x2="1.5" y2="0" class="axes" />
+  <line x1="0" y1="-1.5" x2="0" y2="1.5" class="axes" />
+    <line id="radiusLine" x1="0" y1="0" x2="0" y2="0" class="radius-line" />
+    <circle id="point" cx="0" cy="0" r="0.05" class="point" />
+    <line id="cosLine" x1="0" y1="0" x2="0" y2="0" class="cos-line" />
+  <line id="sinLine" x1="0" y1="0" x2="0" y2="0" class="sin-line" />
+    <text id="angleLabel" x="0.1" y="-0.1" class="angle-label"></text>
+</svg>
+<div id="results">
+  <p><strong>Angle:</strong> <span id="angleVal">45</span>°</p>
+  <p><strong>Cosine (x):</strong> <span id="cosVal"></span></p>
+  <p><strong>Sine (y):</strong> <span id="sinVal"></span></p>
+</div>
+<div class="info">
+  <h2>Special Properties of Sine and Cosine</h2>
+  <ul>
+    <li><span class="highlight">Cosine</span> corresponds to the x-coordinate on the unit circle.</li>
+    <li><span class="highlight">Sine</span> corresponds to the y-coordinate on the unit circle.</li>
+    <li>Both sine and cosine values are between <code>-1</code> and <code>1</code>.</li>
+    <li>At 0°, <code>cos(0°) = 1</code> and <code>sin(0°) = 0</code>.</li>
+    <li>At 90°, <code>cos(90°) = 0</code> and <code>sin(90°) = 1</code>.</li>
+    <li><code>sin(θ) = cos(90° - θ)</code> (co-function identity).</li>
+    <li>Sine is an <strong>odd</strong> function: <code>sin(-θ) = -sin(θ)</code>.</li>
+    <li>Cosine is an <strong>even</strong> function: <code>cos(-θ) = cos(θ)</code>.</li>
+  </ul>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+2. styles.css
+css
+Copy code
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  text-align: center;
+}
+svg {
+  border: 1px solid #ccc;
+  margin: 20px auto;
+  display: block;
+  background-color: #f9f9f9;
+}
+input[type="number"] {
+  width: 80px;
+  padding: 5px;
+  font-size: 16px;
+}
+.info {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+  background: #eef;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #2a5d9f;
+}
+
+/* SVG styles */
+.circle-outline {
+  stroke: #333;
+  stroke-width: 0.02;
+  fill: none;
+}
+
+.axes {
+  stroke: #aaa;
+  stroke-width: 0.01;
+}
+
+.radius-line {
+  stroke: red;
+  stroke-width: 0.03;
+}
+
+.point {
+  fill: red;
+}
+
+.cos-line {
+  stroke: blue;
+  stroke-width: 0.02;
+}
+
+.sin-line {
+  stroke: green;
+  stroke-width: 0.02;
+}
+
+.angle-label {
+  font-size: 0.1;
+  fill: black;
+}
