@@ -6,6 +6,9 @@ function updateCircle() {
     alert("Please enter a valid number for the angle.");
     return;
   }
+  
+  angleDeg = ((angleDeg % 360) + 360) % 360;
+  angleInput.value = angleDeg.toFixed(2);
   angleDeg = ((angleDeg % 360) + 360) % 360;
   const angleRad = angleDeg * Math.PI / 180;
   const cosVal = Math.cos(angleRad);
