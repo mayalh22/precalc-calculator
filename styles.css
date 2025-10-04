@@ -17,7 +17,7 @@ input[type="number"] {
 .info {
   max-width: 600px;
   margin: 20px auto;
-  text-align: left;
+  text-align: center;
   background: #eef;
   padding: 15px;
   border-radius: 8px;
@@ -25,7 +25,7 @@ input[type="number"] {
 
 .highlight {
   font-weight: bold;
-  color: #2a5d9f;
+  color: #1c3b6f;
 }
 
 /* SVG styles */
@@ -62,4 +62,18 @@ input[type="number"] {
 .angle-label {
   font-size: 0.1;
   fill: black;
+}
+@media (max-width: 500px) {
+  svg {
+  width: 300px;
+  height: 300px;
+  }
+
+  input[type="number"] {
+    width: 60px;
+  }
+
+  .info {
+    padding: 10px;
+  }
 }
