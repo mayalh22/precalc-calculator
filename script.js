@@ -15,7 +15,7 @@ function updateCircle() {
   document.getElementById('sinVal').textContent = sinVal.toFixed(4);
   const radiusLine = document.getElementById('radiusLine');
   radiusLine.setAttribute('x2', cosVal);
-  radiusLine.setAttribute('y2', -sinVal); // SVG y-axis is inverted
+  radiusLine.setAttribute('y2', -sinVal);
   const point = document.getElementById('point');
   point.setAttribute('cx', cosVal);
   point.setAttribute('cy', -sinVal);
